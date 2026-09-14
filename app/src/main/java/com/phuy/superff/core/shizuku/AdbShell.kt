@@ -13,7 +13,7 @@ object AdbShell {
         val alive = try { Shizuku.pingBinder() } catch (_: Exception) { false }
         if (!alive) return@withContext ShellResult(-1, "Shizuku not running")
         try {
-            val p = Shizuku.newProcess(cmd, null, null)
+            val p = Shizuku.newProcess(cmd.toTypedArray(), null, null)
             val o = BufferedReader(InputStreamReader(p.inputStream)).readText() +
                     BufferedReader(InputStreamReader(p.errorStream)).readText()
             val c = p.waitFor()
