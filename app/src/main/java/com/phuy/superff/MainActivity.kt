@@ -60,10 +60,30 @@ class MainActivity : ComponentActivity() {
                     },
                     bottomBar = {
                         NavigationBar {
-                            NavigationBarItem(false, { nav.navigate(Nav.HOME) }, { Text("Home") }, {})
-                            NavigationBarItem(false, { nav.navigate(Nav.GROUPS) }, { Text("Groups") }, {})
-                            NavigationBarItem(false, { nav.navigate(Nav.STATS) }, { Text("Stats") }, {})
-                            NavigationBarItem(false, { nav.navigate(Nav.SETTINGS) }, { Text("Settings") }, {})
+                            NavigationBarItem(
+                                selected = false,
+                                onClick = { nav.navigate(Nav.HOME) },
+                                icon = { },
+                                label = { Text("Home") }
+                            )
+                            NavigationBarItem(
+                                selected = false,
+                                onClick = { nav.navigate(Nav.GROUPS) },
+                                icon = { },
+                                label = { Text("Groups") }
+                            )
+                            NavigationBarItem(
+                                selected = false,
+                                onClick = { nav.navigate(Nav.STATS) },
+                                icon = { },
+                                label = { Text("Stats") }
+                            )
+                            NavigationBarItem(
+                                selected = false,
+                                onClick = { nav.navigate(Nav.SETTINGS) },
+                                icon = { },
+                                label = { Text("Settings") }
+                            )
                         }
                     }
                 ) { pad ->
